@@ -16,6 +16,7 @@
 </head>
 <body>
 <h1>ech_cicd Library</h1>
+<span id="greeting"></span> 
 <div id="library">
   <h3>Users</h3>
   <div id="users">
@@ -61,7 +62,7 @@
           todaysDate.getFullYear();
     return greetingString;
   }
-  $('#greeting').text(greeting('Pedro'));
+  $('#greeting').text(greeting('Elder'));
 </script>
 
 <!-- ======================== UNIT-TESTS LOGIC ==================== -->
@@ -81,6 +82,10 @@
 <script>
   function testTheTruth() {
     testResults('1 is equal to 1', 1 === 1);
+	testResults('2 is not equal to 1', 2 !== 1);
+	testResults('2 is not equal to 1 compare', 2 === 1);
+	testResults('Asegurarse que el nombre es en mayusculas', $('#greeting').text() === changeNameToUppercase($('#greeting').text()));
+	testResults('El Año es 2018', (new Date()).getFullYear() === 2018);
   }
   (function() {
     testTheTruth();
